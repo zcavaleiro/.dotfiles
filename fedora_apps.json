@@ -1,0 +1,20 @@
+{
+    "packages": [
+        "dnf-plugins-core",
+        "jq",
+        "timeshift",
+        "git",
+        "kleopatra",
+        "bottles"
+    ],
+    "applications": [
+        {
+            "url": "https://developers.yubico.com/yubioath-flutter/Releases/yubico-authenticator-latest-linux.tar.gz",
+            "dir": "Yubico-authenticator"
+        }
+    ],
+    "signed_packages": [
+        "vscode",
+        "brave"
+    ]
+}
