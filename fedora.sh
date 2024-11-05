@@ -117,6 +117,7 @@ echo '# -------------- zcavaleiro:dotfiles Download the dotfiles and creating sy
 
 # Clone the repo to home directory
 cd $HOME
+rm -rf ~/.dotfiles
 git clone https://github.com/zcavaleiro/.dotfiles ~/.dotfiles
 
 # creates the symblinks to the system
