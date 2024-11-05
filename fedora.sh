@@ -123,7 +123,6 @@ git clone https://github.com/zcavaleiro/.dotfiles ~/.dotfiles
 cd ~/.dotfiles
 ln -sf ~/.dotfiles/.bashrc ~/.bashrc
 ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -sf "~/.dotfiles/.config/Yubico/Yubikey Manager.conf" "~/.config/Yubico/Yubikey Manager.conf"
 
 
 # Making pull from recent changes, use of alias for shortcut
