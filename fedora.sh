@@ -132,4 +132,6 @@ echo "alias dotfiles='cd ~/.dotfiles && git pull && cd -'" >> ~/.bashrc
 # Apply new congiguration changes
 source ~/.bashrc
 
+exec bash
+
 
