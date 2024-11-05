@@ -1,0 +1,34 @@
+# Ignore all hidden files and directories, except for dotfiles specified here
+.*
+!.gitignore
+!.bashrc
+!.vimrc
+!.gitconfig
+!.zshrc
+
+# Ignore shell command history files
+.history
+.zsh_history
+.bash_history
+
+# Ignore SSH keys and other sensitive information
+.ssh
+.gpg
+.keychain
+
+# Ignore cache and temporary data
+.cache
+.local
+.trash
+.trash-*
+.vscode
+
+# Ignore OS-specific files and directories
+.DS_Store
+Thumbs.db
+
+# Ignore environment-specific configuration files
+.env
+*.env
+.env.*
+
