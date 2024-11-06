@@ -133,6 +133,9 @@ ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 # Making pull from recent changes, use of alias for shortcut
 echo "alias dotfiles='cd ~/.dotfiles && git pull && cd -'" >> ~/.bashrc
 
+# Temporarily unset BASHRCSOURCED to avoid double sourcing 
+unset BASHRCSOURCED
+
 # Apply new congiguration changes
 source ~/.bashrc
 
