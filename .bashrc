@@ -49,12 +49,12 @@ test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 ##########################
 # Alias Files Directory Shortcuts
 ##########################
-alias ..="cd .."
 alias cd..="cd .."
-alias ...="cd ../../"
-alias ll="ls -l"
-alias la="ls -lA"
-alias lt="ls -ltr" # short by date
+alias .1="cd .."
+alias .2="cd ../../"
+alias ls="ls -lht --color=auto --group-directories-first"
+alias ll="ls"
+alias la="ls -A"
 alias count="ls * | wc -l"
 alias cp='cp -vi' # asks in case of overwrite a file
 alias mv='mv -vi' # asks in case of overwrite a file
@@ -71,7 +71,8 @@ alias more=less
 alias update="sudo -- sh -c 'dnf update -y; dnf upgrade -y; dnf autoremove -y; dnf clean all'"
 alias myip="ip -f inet address | grep inet | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
 alias cpv="rsync -avh --info=progress2" # (ie) cpv SOURCE_FILE DESTINATION_FILE
-
+alias ports='netstat -tulanp'
+alias path='echo -e ${PATH//:/\\n}'
 
 
 ##########################
