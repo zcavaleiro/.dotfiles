@@ -110,33 +110,3 @@ for application in $APPLICATIONS; do
     echo -e "[Desktop Entry]\nName=$DIR\nExec=xdg-open $APP_DIR/$DIR\nType=Application\nTerminal=false\nIcon=folder" > "$DESKTOP_DIR/$DIR.desktop"
     chmod +x "$DESKTOP_DIR/$DIR.desktop"
 done
-
-
-### Configure the dotfiles
-
-echo '# -------------- zcavaleiro:dotfiles Download the dotfiles and creating symblinks ---------------'
-
-# Clone the repo to home directory
-cd $HOME
-if [ -d "$HOME/.dotfiles" ]; then
-    echo "Dir ~/.dotfiles already exists, removing it..."
-    rm -rf ~/.dotfiles
-fi
-git clone https://github.com/zcavaleiro/.dotfiles ~/.dotfiles
-
-# creates the symblinks to the system
-cd ~/.dotfiles
-ln -sf ~/.dotfiles/.bashrc ~/.bashrc
-ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
-
-
-# Making pull from recent changes, use of alias for shortcut
-echo "alias dotfiles='cd ~/.dotfiles && git pull && cd -'" >> ~/.bashrc
-
-# Temporarily unset BASHRCSOURCED to avoid double sourcing 
-unset BASHRCSOURCED
-
-# Apply new congiguration changes
-source ~/.bashrc
-
-
