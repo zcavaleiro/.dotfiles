@@ -53,8 +53,8 @@ alias cd..="cd .."
 alias .1="cd .."
 alias .2="cd ../../"
 alias ls="ls -lht --color=auto --group-directories-first"
-alias ll="ls"
 alias la="ls -A"
+alias ll="la"
 alias count="ls * | wc -l"
 alias cp='cp -vi' # asks in case of overwrite a file
 alias mv='mv -vi' # asks in case of overwrite a file
