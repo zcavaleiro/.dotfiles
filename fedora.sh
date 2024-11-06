@@ -5,6 +5,9 @@
 # Safe exit of script
 set -euo pipefail
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Declaring Initial Vars
 CONFIG_FILE="fedora_apps.json"
 APP_DIR="$HOME/Applications"
@@ -117,7 +120,10 @@ echo '# -------------- zcavaleiro:dotfiles Download the dotfiles and creating sy
 
 # Clone the repo to home directory
 cd $HOME
-rm -rf ~/.dotfiles
+if [ -d "$HOME/.dotfiles" ]; then
+    echo "Dir ~/.dotfiles already exists, removing it..."
+    rm -rf ~/.dotfiles
+fi
 git clone https://github.com/zcavaleiro/.dotfiles ~/.dotfiles
 
 # creates the symblinks to the system
@@ -131,7 +137,5 @@ echo "alias dotfiles='cd ~/.dotfiles && git pull && cd -'" >> ~/.bashrc
 
 # Apply new congiguration changes
 source ~/.bashrc
-
-exec bash
 
 
