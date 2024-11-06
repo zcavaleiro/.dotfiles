@@ -5,8 +5,6 @@
 # Safe exit of script
 set -euo pipefail
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 # Declaring Initial Vars
 CONFIG_FILE="fedora_apps.json"
