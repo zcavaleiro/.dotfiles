@@ -64,6 +64,9 @@ fedora_apps.json
 
 ### The dotfiles
 
+
+This example is based on the idea of maintaining a git repository to sync configuration files and apply then using simple [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link) across multiple devices or OS's.
+
 ```sh
 # the script
 setup_dotfiles
@@ -74,15 +77,13 @@ setup_dotfiles
 
 ```
 
-This example is based on the idea of maintaining a git repository to sync configuration files and apply them using simple [symbolic links](https://en.wikipedia.org/wiki/Symbolic_link) across multiple devices or OS's.
+- The script `setup_dotfiles` clones this repo to a directory `.dotfiles` in your operating system home.
+- It then, creates the symbolic links from `.dotfiles` defined files, to the system files. In this demo:
+  - `.bashrc` file.
+  - `.gitconfig` file.
+- Finally, the script will create an ***alias*** called **dotfiles** that can pull the latest changes for this repo.
 
 It's a [*KISS*](https://en.wikipedia.org/wiki/KISS_principle) example, Keep It Simple, Stupid!   
 
-> Sharing public configuration files needs to be done with special attention. Some of those configuration files can leak personal or device sensitive information.
+> Sharing public configuration files needs to be done with "some" caution, attention. Some of those configuration files can leak personal or device sensitive information.
 
-
-..
-
-```sh
-
-```
