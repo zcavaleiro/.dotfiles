@@ -29,6 +29,11 @@ unset rc
 #My Configs
 ##########################
 
+# Bash History
+export HISTCONTROL=ignoreboth:erasedups
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+
 # Colour codes
 RED="\\[\\e[1;31m\\]"
 GREEN="\\[\\e[1;32m\\]"
