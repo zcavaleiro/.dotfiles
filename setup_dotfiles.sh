@@ -19,7 +19,7 @@ ln -sf ~/.dotfiles/.bashrc ~/.bashrc
 ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 
 # Making pull from recent changes, use of alias for shortcut
-echo "alias dotfiles='cd ~/.dotfiles && git pull && cd -'" >> ~/.bashrc
+#echo "alias dotfiles='cd ~/.dotfiles && git pull && cd -'" >> ~/.bashrc
 
 # Apply new congiguration changes
 source ~/.bashrc
