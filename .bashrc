@@ -30,10 +30,13 @@ unset rc
 ##########################
 
 # Bash History
-export HISTCONTROL=ignoreboth:erasedups
+export HISTCONTROL=erasedups:ignoredups:ignorespace
 export HISTSIZE=10000
 export HISTFILESIZE=20000
 
+##########################
+#Terminal prompt
+##########################
 # Colour codes
 RED="\\[\\e[1;31m\\]"
 GREEN="\\[\\e[1;32m\\]"
@@ -51,10 +54,8 @@ parse_git_branch() {
 
 # Set a two-line prompt. If accessing via ssh include 'ssh-session' message.
 if [[ -n "$SSH_CLIENT" ]]; then ssh_message="-ssh_session"; fi
-PS1="${MAGENTA}\t ${GREEN}\u ${WHITE}at ${YELLOW}\h${RED}${ssh_message} ${WHITE}in $(parse_git_branch) ${BLUE}\w \n${CYAN}\$${ENDC} "
+PS1="${MAGENTA}\t ${GREEN}\u ${WHITE}at ${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${RED}\$(parse_git_branch) ${BLUE}\w \n${CYAN}\$${ENDC} "
 
-# files types by color in terminal - Nord Theme
-test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
 ##########################
 # Alias Files Directory Shortcuts
@@ -68,10 +69,8 @@ alias ll="la"
 alias count="ls * | wc -l"
 alias cp='cp -vi' # asks in case of overwrite a file
 alias mv='mv -vi' # asks in case of overwrite a file
-alias mv='mv -vi' # asks in case of overwrite a file
 alias bashrc="nano ~/.bashrc"
 alias more=less
-
 
 
 ##########################
@@ -95,7 +94,6 @@ alias myserver2="ssh myserver2" # after config
 ##########################
 #Directory Shortcuts
 ##########################
-
 alias movies="cd/shared/media/movies/"
 alias public='cd /shared/public'
 alias dotfiles='cd ~/.dotfiles && git pull && cd -'
