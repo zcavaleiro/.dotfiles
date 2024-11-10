@@ -93,3 +93,4 @@ alias myserver2="ssh myserver2" # after config
 
 alias movies="cd/shared/media/movies/"
 alias public='cd /shared/public'
+alias dotfiles='cd ~/.dotfiles && git pull && cd -'
